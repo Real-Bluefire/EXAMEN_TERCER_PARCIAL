@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:local="clr-namespace:EXAMEN_TERCER_PARCIAL"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EXAMEN_TERCER_PARCIAL.MainPage"
+             BackgroundColor="#E3F2FD">
+
+    <StackLayout Padding="50,100,50,0" Spacing="10" BackgroundColor="#BBDEFB">
+        <!-- Fecha -->
+        <Label Text="Seleccionar fecha:" TextColor="#0D47A1"/>
+        <DatePicker x:Name="FechaSelector" BackgroundColor="#FFFFFF"/>
+
+        <!-- Descripción -->
+        <Label Text="Descripción:" TextColor="#0D47A1"/>
+        <Editor HeightRequest="80" x:Name="DescSelector" BackgroundColor="#FFFFFF" TextColor="#0D47A1"/>
+
+        <!-- Imagen -->
+        <Image HeightRequest="150" x:Name="PhotoImage"/>
+
+        <StackLayout Padding="0,10,0,0" Spacing="10">
+            <Button Clicked="OnAnadirNotaClicked" Text="Añadir una nota" BackgroundColor="#2196F3" TextColor="#FFFFFF" HorizontalOptions="Center" WidthRequest="200"/>
+            <Button Clicked="OnMostrarNotasClicked" Text="Mostrar notas" BackgroundColor="#1976D2" TextColor="#FFFFFF" HorizontalOptions="Center" WidthRequest="200"/>
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>

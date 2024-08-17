@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:EXAMEN_TERCER_PARCIAL.Views"
+             x:Class="EXAMEN_TERCER_PARCIAL.Views.NoteList"
+             Title="NoteList">
+
+    <ContentPage.Content>
+        <VerticalStackLayout BackgroundColor="#E3F2FD">
+            <Label 
+                Text="Lista de Notas" 
+                FontSize="24" 
+                HorizontalOptions="Center" 
+                VerticalOptions="Start" 
+                TextColor="#0D47A1" />
+
+            <Button Text="Mostrar Notas"
+                    BackgroundColor="#2196F3"
+                    TextColor="White"
+                    Clicked="OnMostrarNotasClicked"/>
+
+            <ListView x:Name="notasListView"
+                      VerticalOptions="FillAndExpand"
+                      BackgroundColor="#BBDEFB">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <SwipeView>
+                                <!-- Contenido del SwipeView -->
+                                <SwipeView.Content>
+                                    <Label Text="{Binding Descripcion}" Padding="10" TextColor="#0D47A1"/>
+                                </SwipeView.Content>
+
+                                <!-- Swipe Actions -->
+                                <SwipeView.RightItems>
+                                    <SwipeItems>
+                                        <SwipeItem Text="Actualizar" BackgroundColor="#2196F3" Invoked="ActualizarNota"/>
+                                        <SwipeItem Text="Eliminar" BackgroundColor="#1976D2" Invoked="EliminarNota"/>
+                                    </SwipeItems>
+                                </SwipeView.RightItems>
+                            </SwipeView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ContentPage.Content>
+</ContentPage>
